@@ -1,0 +1,28 @@
+from selenium import webdriver
+from selenium.webdriver import ActionChains
+
+webdriver1=webdriver.Chrome()
+'''
+for i in range(1):
+    webdriver1.get("http://www.baidu.com")
+    webdriver1.refresh()
+    e1=webdriver1.find_element_by_id("kw")
+    e2=webdriver1.find_element_by_id("su")
+    e1.send_keys("莫愁中专")
+    e2.click()
+webdriver1.maximize_window()
+webdriver1.get("http://www.baidu.com")
+e3=webdriver1.find_element_by_id("s-usersetting-top")
+#e3.click()
+ActionChains(webdriver1).move_to_element(e3).perform()
+e3=webdriver1.find_element_by_link_text("搜索设置")
+e3.click()
+'''
+for i in range(30000):
+    webdriver1.get("http://www.mczz.net")
+    e4=webdriver1.find_element_by_link_text("第20周全校督导综述")
+    e4.click()
+    windows=webdriver1.window_handles
+    webdriver1.switch_to.window(windows[1])
+    webdriver1.close()
+    webdriver1.switch_to.window(windows[1])
